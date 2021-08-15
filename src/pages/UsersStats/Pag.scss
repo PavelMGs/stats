@@ -1,0 +1,40 @@
+.MuiPaginationItem-page.Mui-selected {
+    background: #3A80BA !important;
+}
+
+.MuiPaginationItem-rounded {
+    border: 2px solid #F1F1F1 !important;
+    box-sizing: border-box !important;
+    border-radius: 8px !important;
+    height: 48px !important;
+    width: 48px !important;
+}
+
+
+.MuiPagination-ul li:first-child > button{
+    border: none !important;
+    &::before {
+        position: absolute;
+        top: 4.9px;
+        content: url('../../assets/right.png');
+        transform: rotate(180deg);
+    }
+
+    & > svg {
+        visibility: hidden;
+    }
+}
+
+.MuiPagination-ul li:last-child > button{
+    border: none !important;
+
+    &::before {
+        position: absolute;
+        top: 10px;
+        content: url('../../assets/right.png');
+    }
+
+    & > svg {
+        visibility: hidden;
+    }
+}

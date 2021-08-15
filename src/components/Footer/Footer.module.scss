@@ -1,0 +1,44 @@
+.root, .transparent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    padding: 0 130px;
+
+    background: #1C3B55;
+
+    display: flex;
+    justify-content: space-between;
+
+    width: 100vw;
+
+    box-sizing: border-box;
+
+    color: white;
+}
+
+.logo, .tr_logo {
+    font-size: 32px;
+    line-height: 39.01px;
+
+    margin-bottom: 30.46px;
+}
+
+.tr_logo {
+    margin: 14px 0;
+}
+
+.rights, .copyright, .tr_rights, .tr_copyright {
+    font-size: 16px;
+    line-height: 22.72px;
+
+    margin-bottom: 38.46px;
+}
+
+.tr_rights, .tr_copyright {
+    margin: 17px 0;
+}
+
+.transparent {
+    background-color: rgba(255, 255, 255, 0);
+}

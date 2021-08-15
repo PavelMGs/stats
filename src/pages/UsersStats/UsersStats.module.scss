@@ -1,0 +1,56 @@
+.root {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    width: 100vw;
+
+    padding: 0 130px 0;
+
+    & > h2 {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 39px;
+        color: #1A1A1A;
+
+        margin-bottom: 16px;
+        margin-top: 24px;
+    }
+    
+}
+
+.navigation {
+    margin-top: 88px;
+}
+
+.pag {
+    width: calc(100% - 260px);
+}
+
+.pag > nav > ul {
+    justify-content: center !important;
+    
+}
+
+.pagination {
+    margin-bottom: 81px;
+}
+.greater {
+    color: #CCCCCC;
+    font-size: 16px;
+    line-height: 19.5px;
+}
+
+.to_main {
+    font-size: 16px;
+    line-height: 19.5px;
+    color: #CCCCCC;
+    text-decoration: none;
+}
+
+.current {
+    font-size: 16px;
+    line-height: 19.5px;
+    color: #3A80BA;
+}
