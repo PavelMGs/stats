@@ -28,6 +28,10 @@ const UsersStats = () => {
     const handleChandhePage = (nextPage: number) => {
         setPage(nextPage)
     }
+    
+    if(!data.length) {
+        return <div>Loading data...<div>
+    }
 
     return (
         <div className={s.root}>
