@@ -12,7 +12,7 @@ export interface IUser {
 export interface IStats {
   clicks: number;
   createdAt: string;
-  date: string;
+  date: Date;
   page_views: number;
   updatedAt: string;
   user_id: number;
