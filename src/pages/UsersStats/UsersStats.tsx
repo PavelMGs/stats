@@ -6,20 +6,15 @@ import Table from '../../components/Table/Table';
 import { IData } from '../../interfaces';
 import s from './UsersStats.module.scss';
 import Footer from '../../components/Footer/Footer';
+import { host } from '../../utils/host';
 
 const UsersStats = () => {
     const [data, setData] = useState<IData>();
     const [page, setPage] = useState(1);
     const [pagesCount, setPagesCount] = useState(1);
 
-    // useEffect(() => {
-    //     fetch(`http://localhost:8000/`)
-    //         .then(res => res.json())
-    //         .then(json => console.log(json))
-    // }, [])
-
     useEffect(() => {
-        fetch(`http://localhost:8000/${page}`)
+        fetch(`${host}${page}`)
         .then(res => res.json())
         .then((json: any) => {
             const users = json.users;

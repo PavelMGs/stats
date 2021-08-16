@@ -9,23 +9,25 @@ import DataPicker from '../../components/DataPicker/DataPicker';
 import { IStats, IUser } from '../../interfaces';
 import Chart from '../../components/Chart/Chart';
 import { months } from './months';
+import { host } from '../../utils/host';
+import DataRP from '../../components/DataRP/DataRP';
 
 const User = () => {
     const {uid} = useParams<any>();
     const [isClosed, setIsClosed] = useState(true);
-    const [selectionRange, setSelectionRange] = useState<any>({ startDate: new Date('2019-10-02'), endDate: new Date('2019-10-13') });
+    const [selectionRange, setSelectionRange] = useState<any>([new Date('2019-10-02'), new Date('2019-10-13')] );
     const [data, setData] = useState <{ user: IUser, stats: IStats[] }>();
     const [fromTo, setFromTo] = useState('');
     const [clicks, setClicks] = useState<any>([]);
     const [views, setViews] = useState<any>([])
 
     useEffect(() => {
-        fetch(`http://localhost:8000/user/${uid}/${selectionRange.startDate.getTime()}/${selectionRange.endDate.getTime()}`)
+        fetch(`${host}user/${uid}/${selectionRange[0].getTime()}/${selectionRange[1].getTime()}`)
         .then(res => res.json())
             .then(res_data => setData(res_data))
 
-        const date_text = `${months[selectionRange.startDate.getMonth()]} ${selectionRange.startDate.getDay()},${selectionRange.startDate.getFullYear()}
-                            -${months[selectionRange.endDate.getMonth()]} ${selectionRange.endDate.getDay()},${selectionRange.endDate.getFullYear()}
+        const date_text = `${months[selectionRange[0].getMonth()]} ${selectionRange[0].getDay()},${selectionRange[0].getFullYear()}
+                            -${months[selectionRange[1].getMonth()]} ${selectionRange[1].getDay()},${selectionRange[1].getFullYear()}
         `
         setFromTo(date_text);
     }, [selectionRange])
@@ -69,13 +71,10 @@ const User = () => {
 
     }, [data])
 
-    const handleSelect = (range: OnDateRangeChangeProps) => {
-        setSelectionRange(range.range1);
+    const handleSelect = (value: Array<Date>) => {
+        setSelectionRange(value);
     }
     
-    const handleClose = () => {
-        setIsClosed(true);
-    }
 
     return (
         <div className={s.root}>
@@ -90,15 +89,7 @@ const User = () => {
                 <h2>{data?.user.first_name} {data?.user.last_name}</h2>
                 <div className={s.data_container}>
                     <span>Select date range</span>
-                    <div className={s.data_label} onClick={() => setIsClosed(!isClosed)}>
-                        <div className={s.img_container}>
-                            <img src={calendar} alt="" />
-                        </div>
-                        <div className={s.date_text_label}>
-                            {fromTo}
-                        </div>
-                    </div>
-                    <DataPicker handleSelect={handleSelect} handleClose={handleClose} isClosed={isClosed} selectionRange={selectionRange} />
+                    <DataRP handleSelect={handleSelect} current={selectionRange} fromTo={fromTo} />
                 </div>
             </div>
             {
@@ -107,7 +98,6 @@ const User = () => {
             {
                 views.length ? <div className={s.chart} style={{marginBottom: "105px"}} ><Chart data={views} type="views" /></div> : 'No such data'
             }
-            <div></div>
         </div>
     )
 }
