@@ -37,7 +37,7 @@
     justify-content: space-between;
     align-items: center;
 
-    width: 100%;
+    width: calc(100vw - 500px);
 
     margin-bottom: 16px;
     margin-top: 24px;
@@ -56,7 +56,7 @@
 .data_container {
     display: flex;
     flex-direction: row;
-    width: 330px;
+    width: 340px;
     align-items: center;
     & > span {
         font-size: 14px;

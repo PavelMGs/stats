@@ -2,13 +2,18 @@
     position: absolute;
     top: 0;
     width: 100vw;
-    padding: 10px 0 13px 130px;
+    height: 72px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
     background-color: #3A80BA;
 
     color: white;
     font-size: 40px;
     line-height: 48,76px;
+
+    padding-left: 130px;
 
     box-sizing: border-box;
 }
