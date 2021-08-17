@@ -30,6 +30,10 @@ const UsersStats = () => {
     const handleChandhePage = (nextPage: number) => {
         setPage(nextPage)
     }
+    
+    if(!data.length) {
+        return <div>Loading data...<div>
+    }
 
     if(!data) {
         return <div className={s.loading} ><CircularProgress /></div>
