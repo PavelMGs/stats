@@ -1,4 +1,4 @@
-Deploy - https://611b4ce4a290cfe2a52b84ef--stats-mg.netlify.app/
+Deploy - https://611bf3c265309c0092bf96a3--stats-mg.netlify.app/
 
 Backend - https://github.com/PavelMGs/api_stats
 
