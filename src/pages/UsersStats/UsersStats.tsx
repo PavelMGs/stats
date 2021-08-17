@@ -29,7 +29,7 @@ const UsersStats = () => {
 
     const handleChandhePage = (nextPage: number) => {
         setPage(nextPage)
-    }
+    } 
 
     if(!data) {
         return <div className={s.loading} ><CircularProgress /></div>

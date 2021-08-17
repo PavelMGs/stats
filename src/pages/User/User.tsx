@@ -11,10 +11,10 @@ import Chart from '../../components/Chart/Chart';
 import { months } from './months';
 import { host } from '../../utils/host';
 import DataRP from '../../components/DataRP/DataRP';
+import { dateToString } from '../../utils/dateToString';
 
 const User = () => {
     const {uid} = useParams<any>();
-    const [isClosed, setIsClosed] = useState(true);
     const [selectionRange, setSelectionRange] = useState<any>([new Date('2019-10-02'), new Date('2019-10-13')] );
     const [data, setData] = useState <{ user: IUser, stats: IStats[] }>();
     const [fromTo, setFromTo] = useState('');
@@ -22,7 +22,9 @@ const User = () => {
     const [views, setViews] = useState<any>([])
 
     useEffect(() => {
-        fetch(`${host}user/${uid}/${selectionRange[0].getTime()}/${selectionRange[1].getTime()}`)
+        const start = dateToString(selectionRange[0]);
+        const end = dateToString(selectionRange[1]);
+        fetch(`${host}user/${uid}/${start}/${end}`)
         .then(res => res.json())
             .then(res_data => setData(res_data))
 
@@ -44,9 +46,9 @@ const User = () => {
         
         setClicks(clicks_data)
 
-        console.log(data);
         const views_data: any = [];
         data?.stats.map((item) => {
+            console.log(item.date)
             const date = new Date(item.date)
             views_data.push({
                 date: `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`,
@@ -72,6 +74,7 @@ const User = () => {
     }, [data])
 
     const handleSelect = (value: Array<Date>) => {
+        console.log('geeg', value);
         setSelectionRange(value);
     }
     
