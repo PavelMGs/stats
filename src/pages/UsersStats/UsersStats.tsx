@@ -7,6 +7,7 @@ import { IData } from '../../interfaces';
 import s from './UsersStats.module.scss';
 import Footer from '../../components/Footer/Footer';
 import { host } from '../../utils/host';
+import { CircularProgress } from '@material-ui/core';
 
 const UsersStats = () => {
     const [data, setData] = useState<IData>();
@@ -22,11 +23,16 @@ const UsersStats = () => {
             const pages = json.pagesCount;
             setPagesCount(pages)
             setData({ users, statistic })
+            console.log(statistic)
         })
     }, [page])
 
     const handleChandhePage = (nextPage: number) => {
         setPage(nextPage)
+    }
+
+    if(!data) {
+        return <div className={s.loading} ><CircularProgress /></div>
     }
 
     return (
