@@ -37,7 +37,7 @@
     justify-content: space-between;
     align-items: center;
 
-    width: calc(100vw - 500px);
+    width: calc(100vw - 520px);
 
     margin-bottom: 16px;
     margin-top: 24px;
@@ -101,6 +101,20 @@
     position: absolute;
     font-size: 12px;
     margin-right: 15px;
+}
+
+@media (max-width: 1080px) {
+    .root {
+        padding: 0 12px;
+        align-items: end;
+    }
+    .container {
+        flex-direction: column;
+        width: calc(100vw - 24px);
+        align-items: flex-start;
+
+        
+    }
 }
 
 @media (max-width: 400px) {

@@ -8,6 +8,12 @@
     }
 }
 
+@media (max-width: 1080px) {
+    .root {
+        width: calc(100vw - 36px);
+    }
+}
+
 @media (max-width: 400px) {
     .root {
         width: calc(100vw - 24px);
