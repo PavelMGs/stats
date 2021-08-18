@@ -61,3 +61,16 @@
     left: 130px;
     right: auto;
 }
+
+@media (max-width: 400px) {
+    .root {
+        padding: 0 12px;
+    }
+
+    .pag {
+    width: calc(100vw - 24px);
+    }
+    .pagination {
+        margin-bottom: 160px;
+    }
+}

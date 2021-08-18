@@ -55,3 +55,118 @@
         background-color: #F1F1F1;
     }
 }
+
+
+@media (max-width: 400px) {
+    .head {
+        display: none;
+    }
+
+    .bodyline {
+        position: relative;
+
+        display: flex;
+        width: 335px;
+        height: 200px;
+
+        border-radius: 16px;
+    }
+
+    & th:nth-child(1) {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+
+        font-size: 12px;
+        width: calc(100% - 24px);
+        height: 16px;
+
+        border-bottom: 1px solid black;
+        text-align: start;
+    }
+    & th:nth-child(2) {
+        position: absolute;
+        top: 35px;
+        left: 15px;
+
+        font-size: 16px;
+        font-weight: 400;
+
+        &::before {
+            content: 'First Name: ';
+            font-weight: 700;
+        }
+    }
+    & th:nth-child(3) {
+        position: absolute;
+        top: 55px;
+        left: 15px;
+
+        font-size: 16px;
+        font-weight: 400;
+        &::before {
+            content: 'Last Name: ';
+            font-weight: 700;
+        }
+    }
+    & th:nth-child(4) {
+        position: absolute;
+        top: 75px;
+        left: 15px;
+
+        font-size: 16px;
+        font-weight: 400;
+        &::before {
+            content: 'Email: ';
+            font-weight: 700;
+        }
+    }
+    & th:nth-child(5) {
+        position: absolute;
+        top: 95px;
+        left: 15px;
+
+        font-size: 16px;
+        font-weight: 400;
+        &::before {
+            content: 'Gender: ';
+            font-weight: 700;
+        }
+    }
+    & th:nth-child(6) {
+        position: absolute;
+        top: 115px;
+        left: 15px;
+
+        font-size: 16px;
+        font-weight: 400;
+        &::before {
+            content: 'IP address: ';
+            font-weight: 700;
+        }
+    }
+    & th:nth-child(7) {
+        position: absolute;
+        top: 135px;
+        left: 15px;
+
+        font-size: 16px;
+        font-weight: 400;
+        &::before {
+            content: 'Total clicks: ';
+            font-weight: 700;
+        }
+    }
+    & th:nth-child(8) {
+        position: absolute;
+        top: 155px;
+        left: 15px;
+
+        font-size: 16px;
+        font-weight: 400;
+        &::before {
+            content: 'Total page views: ';
+            font-weight: 700;
+        }
+    }
+}

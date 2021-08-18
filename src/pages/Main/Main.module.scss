@@ -153,6 +153,140 @@
 }
 
 
-@media (max-width: 1400px) {
+@media (orientation: landscape) and (max-height: 645px) {
+    .slogan {
+        margin-top: 64px;
 
+        font-size: 26px;
+        line-height: 48.51px;
+
+        font-weight: 400;
+
+        margin-bottom: 16px;
+    }
+    .description {
+        font-size: 16px;
+        line-height: 24.4px;
+
+        width: 250px;
+
+        margin-bottom: 32px;
+    }
+
+    .mobile {
+        width: 240px;
+        height: 419px;
+        margin: 72px auto 0 auto;
+    }
+
+    .benefits {
+        flex-direction: column;
+        align-items: center;
+        & > div {
+            margin-bottom: 26px;
+        }
+        & div:nth-child(-n+2) {
+        margin-right: 0;
+        }
+    }
+
+    .footer > form {
+            margin: auto auto 16px;
+    }
+}
+
+@media (max-width: 400px) {
+    .top {
+        background: linear-gradient(90.95deg, #255D8B 2.29%, #3A80BA 96.79%);
+        padding: 0 12px;
+        flex-direction: column;
+    }
+     .slogan {
+        margin-top: 64px;
+
+        font-size: 26px;
+        line-height: 32.51px;
+
+        font-weight: 400;
+
+        margin-bottom: 16px;
+
+        text-align: center;
+    }
+    .description {
+        position: relative;
+        font-size: 14px;
+        line-height: 24.4px;
+
+        width: 350px;
+
+        margin-left: 0;
+        padding-top: 65px;
+
+        display: flex;
+        flex-direction: row;
+
+        align-self: flex-start;
+    }
+
+    .mobile {
+        width: 180px;
+        height: 315px;
+        margin-top: -65px;
+    }
+
+    .left_block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .benefits {
+        flex-direction: column;
+        align-items: center;
+        & > div {
+            margin-bottom: 26px;
+        }
+        & div:nth-child(-n+2) {
+            margin-right: 0;
+        }
+    }
+    .footer {
+        background: linear-gradient(90.95deg, #255D8B 2.29%, #3A80BA 96.79%);
+        height: 120px;
+        &  > form {
+            flex-direction: column;
+            align-items: center;
+            margin: auto auto 32px;
+
+            width: 300px;
+
+            height: 50px;
+
+            & input:nth-child(1) {
+            border: none;
+            margin: 15.46px 0 14.54px 19px;
+            height: 26px;
+            width: 280px;
+            outline: none;
+            color: black;
+        }
+
+        & input:nth-child(2) {
+            background-color: #3A80BA;
+
+            font-size: 16px;
+            line-height: 22.72px;
+            color: white;
+            outline: none;
+            border: none;
+            border-radius: 8px;
+
+            width: 176px;
+            height: 56px;
+
+            margin: 4.46px 4px 3.54px;
+        }
+        }
+    }
 }

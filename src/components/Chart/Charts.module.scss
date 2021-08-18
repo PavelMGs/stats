@@ -7,3 +7,9 @@
         text-transform: capitalize;
     }
 }
+
+@media (max-width: 400px) {
+    .root {
+        width: calc(100vw - 24px);
+    }
+}

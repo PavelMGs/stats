@@ -28,3 +28,10 @@
     text-align: center;
     white-space: pre-wrap;
 }
+
+@media (max-width: 400px) {
+    .root {
+        width: 320px;
+        height: 272px;
+    }
+}

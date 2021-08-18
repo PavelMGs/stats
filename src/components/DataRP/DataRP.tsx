@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 //@ts-ignore
 import { DateRangePicker } from 'rsuite';
+import UAParser from 'ua-parser-js';
 
 interface IDataRP {
     handleSelect: (value: Array<Date>) => void
@@ -9,13 +10,16 @@ interface IDataRP {
 }
 
 const DataRP: React.FC<IDataRP> = ({ handleSelect, current, fromTo }) => {
-    const handle = (value: any) => {
-        console.log(value);
-    }
+    const [device, setDevice] = useState('');
+    
+    useEffect(() => {
+        let deviceL = UAParser(navigator.userAgent).device.type;
+        setDevice(deviceL as string)
+    })
     return (
         <div>
             {/* @ts-ignore */}
-            <DateRangePicker placeholder={fromTo} onChange={handleSelect} defaultCalendarValue={current} />
+            <DateRangePicker placeholder={fromTo} showOneCalendar={device === 'mobile' ? true: false} onChange={handleSelect} defaultCalendarValue={current} />
         </div>
     )
 }

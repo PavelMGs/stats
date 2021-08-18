@@ -16,9 +16,20 @@
     padding-left: 130px;
 
     box-sizing: border-box;
+    z-index: 5;
 }
 
 .transparent {
     background-color: rgba(255, 255, 255, 0);
     padding: 24px 0 0 130px;
+}
+
+@media (max-width: 400px) {
+    .root, .transparent {
+        padding: 0 12px;
+        font-size: 26px;
+        display: flex;
+        justify-content: center;
+        width: 100vw
+    }
 }

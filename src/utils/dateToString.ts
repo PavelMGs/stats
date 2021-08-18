@@ -10,18 +10,17 @@ const localGetMonth = (date: Date) => {
     return month;
 };
 
-const localGetDay = (date: Date) => {
-    let day: number | string | string[] = date.getDay();
-    day = day.toString();
-    if (day.length === 1) {
-        day = day.split('');
-        day.unshift("0");
-        day = day.join('');
-        console.log(day)
-    }
-    return day;
+const localGetDate = (date: Date) => {
+  let day: number | string | string[] = date.getDate();
+  day = day.toString();
+  if (day.length === 1) {
+    day = day.split("");
+    day.unshift("0");
+    day = day.join("");
+  }
+  return day;
 };
 
 export const dateToString = (date: Date) => {
-    return `${date.getFullYear()}-${localGetMonth(date)}-${localGetDay(date)}`
+    return `${date.getFullYear()}-${localGetMonth(date)}-${localGetDate(date)}`
 }

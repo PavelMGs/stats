@@ -42,3 +42,21 @@
 .transparent {
     background-color: rgba(255, 255, 255, 0);
 }
+
+@media (max-width: 400px) {
+    .root {
+        padding: 0 12px; 
+    }
+
+    .tr_logo {
+        font-size: 24px;
+    }
+
+    .tr_rights, .tr_copyright {
+    font-size: 12px;
+    line-height: 22.72px;
+
+    margin-bottom: 14px;
+    text-align: center;
+}
+}

@@ -38,3 +38,54 @@
         visibility: hidden;
     }
 }
+
+@media (max-width: 400px) {
+    .MuiPagination-ul li:first-child > button{
+    border: none !important;
+    &::before {
+        position: absolute;
+        top: -7px;
+        content: ' ';
+        background-image: url('../../assets/right.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 12px 20px;
+        transform: rotate(180deg);
+        width: 48px;
+        height: 48px;
+    }
+
+    & > svg {
+        visibility: hidden;
+    }
+}
+
+.MuiPagination-ul li:last-child > button{
+    border: none !important;
+
+    &::before {
+        position: absolute;
+        top: -7px;
+        content: '';
+        background-image: url('../../assets/right.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 12px 20px;
+        width: 48px;
+        height: 48px;
+    }
+
+    & > svg {
+        visibility: hidden;
+    }
+}
+
+    .MuiPaginationItem-rounded {
+        height: 32px !important;
+        width: 32px !important;
+    }
+
+    .MuiPaginationItem-root {
+        margin-right: 0px !important;
+    }
+}

@@ -2,10 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import s from './User.module.scss';
-import calendar from '../../assets/calendar.png';
-import { OnDateRangeChangeProps } from 'react-date-range';
 import { useState } from 'react';
-import DataPicker from '../../components/DataPicker/DataPicker';
 import { IStats, IUser } from '../../interfaces';
 import Chart from '../../components/Chart/Chart';
 import { months } from './months';
@@ -28,18 +25,18 @@ const User = () => {
         .then(res => res.json())
             .then(res_data => setData(res_data))
 
-        const date_text = `${months[selectionRange[0].getMonth()]} ${selectionRange[0].getDay()},${selectionRange[0].getFullYear()}
-                            -${months[selectionRange[1].getMonth()]} ${selectionRange[1].getDay()},${selectionRange[1].getFullYear()}
+        const date_text = `${months[selectionRange[0].getMonth()]} ${selectionRange[0].getDate()},${selectionRange[0].getFullYear()}
+                            -${months[selectionRange[1].getMonth()]} ${selectionRange[1].getDate()},${selectionRange[1].getFullYear()}
         `
         setFromTo(date_text);
-    }, [selectionRange])
+    }, [selectionRange, uid])
 
     useEffect(() => {
         const clicks_data: any = [];
-        data?.stats.map((item) => {
+        data?.stats.forEach((item) => {
             const date = new Date(item.date)
             clicks_data.push({
-                date: `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`,
+                date: dateToString(date),
                 clicks: item.clicks
             })
         });
@@ -48,10 +45,9 @@ const User = () => {
 
         const views_data: any = [];
         data?.stats.map((item) => {
-            console.log(item.date)
             const date = new Date(item.date)
             views_data.push({
-                date: `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`,
+                date: dateToString(date),
                 views: item.page_views
             })
         });
@@ -74,7 +70,6 @@ const User = () => {
     }, [data])
 
     const handleSelect = (value: Array<Date>) => {
-        console.log('geeg', value);
         setSelectionRange(value);
     }
     

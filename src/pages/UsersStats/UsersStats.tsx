@@ -5,7 +5,6 @@ import './Pag.scss';
 import Table from '../../components/Table/Table';
 import { IData } from '../../interfaces';
 import s from './UsersStats.module.scss';
-import Footer from '../../components/Footer/Footer';
 import { host } from '../../utils/host';
 import { CircularProgress } from '@material-ui/core';
 
